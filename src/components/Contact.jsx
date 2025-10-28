@@ -43,10 +43,10 @@ export default function ContactUs() {
               className="h2-div-for-clients-testimonials-1 text-center mb-4"
             >
               <h2 className="mb-0 text-center text-3xl sm:text-4xl font-semibold leading-tight">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FB8500] to-[#219EBC]">
-                        Get Connect's
-                    </span>
-                </h2>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FB8500] to-[#219EBC]">
+                  Get Connect's
+                </span>
+              </h2>
             </motion.div>
           </div>
 
@@ -77,7 +77,7 @@ export default function ContactUs() {
               <motion.div
                 variants={leftItem}
                 whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                className="flex items-start gap-3 bg-[#F3F3F3] rounded-xl px-3 py-3 border border-[#E5E7EB]"
+                className="flex items-start gap-3 bg-[#F3F3F3] rounded-2xl px-3 py-3 border border-[#E5E7EB]"
               >
                 <span
                   className="inline-flex h-9 w-9 items-center justify-center rounded-lg"
@@ -85,13 +85,11 @@ export default function ContactUs() {
                 >
                   <LuMapPin size={18} />
                 </span>
-
                 <div className="public_sans_body text-p2 font-p2 text-[#111827] flex-1 leading-relaxed">
                   Chamber 6, 4th Floor, Sangam Place <br />
                   (Opposite K K Sales), Civil Lines, <br />
                   Prayagraj, Uttar Pradesh – 211001
                 </div>
-
                 <a
                   href="https://maps.app.goo.gl/wdp75hHVMYMdVipt7"
                   target="_blank"
@@ -99,17 +97,7 @@ export default function ContactUs() {
                   className="shrink-0 self-center"
                 >
                   <button
-                    className="relative z-0 flex items-center justify-center 
-                                px-4 py-1 text-white text-[16px] font-semibold 
-                                public-sans bg-[#219EBC] overflow-hidden 
-                                before:absolute before:inset-0 before:-z-10 
-                                before:translate-x-[150%] before:translate-y-[150%] 
-                                before:scale-[2.5] before:rounded-[100%] 
-                                before:bg-[#FB8500] before:transition-transform 
-                                before:duration-700 hover:before:translate-x-0 
-                                hover:before:translate-y-0 
-                                active:scale-90 active:transition-all active:duration-300 
-                                400px:px-4 400px:py-1"
+                    className="relative z-0 flex items-center justify-center px-4 py-1 text-white text-[16px] font-semibold public-sans bg-[#219EBC] overflow-hidden before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-[#FB8500] before:transition-transform before:duration-700 hover:before:translate-x-0 hover:before:translate-y-0 active:scale-90 active:transition-all active:duration-300 400px:px-4 400px:py-1"
                   >
                     View Map
                   </button>
@@ -120,7 +108,7 @@ export default function ContactUs() {
               <motion.div
                 variants={leftItem}
                 whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                className="flex items-center gap-3 bg-[#F3F3F3] rounded-xl px-3 py-3 border border-[#E5E7EB]"
+                className="flex items-center gap-3 bg-[#F3F3F3] rounded-2xl px-3 py-3 border border-[#E5E7EB]"
               >
                 <span
                   className="inline-flex h-9 w-9 items-center justify-center rounded-lg"
@@ -132,17 +120,8 @@ export default function ContactUs() {
                   info@bebeyond.digital
                 </span>
                 <a href="mailto:info@bebeyond.digital" className="shrink-0">
-                  <button className="relative z-0 flex items-center justify-center 
-                                px-4 py-1 text-white text-[16px] font-semibold 
-                                public-sans bg-[#219EBC] overflow-hidden 
-                                before:absolute before:inset-0 before:-z-10 
-                                before:translate-x-[150%] before:translate-y-[150%] 
-                                before:scale-[2.5] before:rounded-[100%] 
-                                before:bg-[#FB8500] before:transition-transform 
-                                before:duration-700 hover:before:translate-x-0 
-                                hover:before:translate-y-0 
-                                active:scale-90 active:transition-all active:duration-300 
-                                400px:px-4 400px:py-1">
+                  <button className="relative z-0 flex items-center justify-center px-4 py-1 text-white text-[16px] font-semibold public-sans bg-[#219EBC] overflow-hidden before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-[#FB8500] before:transition-transform before:duration-700 hover:before:translate-x-0 hover:before:translate-y-0 active:scale-90 active:transition-all active:duration-300 400px:px-4 400px:py-1"
+                  >
                     Email Us
                   </button>
                 </a>
@@ -152,7 +131,7 @@ export default function ContactUs() {
               <motion.div
                 variants={leftItem}
                 whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                className="flex items-center gap-3 bg-[#F3F3F3] rounded-xl px-3 py-3 border border-[#E5E7EB]"
+                className="flex items-center gap-3 bg-[#F3F3F3] rounded-2xl px-3 py-3 border border-[#E5E7EB]"
               >
                 <span
                   className="inline-flex h-9 w-9 items-center justify-center rounded-lg"
@@ -164,17 +143,8 @@ export default function ContactUs() {
                   +91-9918671867
                 </span>
                 <a href="tel:+919918671867" className="shrink-0">
-                  <button className="relative z-0 flex items-center justify-center 
-                                px-4 py-1 text-white text-[16px] font-semibold 
-                                public-sans bg-[#219EBC] overflow-hidden 
-                                before:absolute before:inset-0 before:-z-10 
-                                before:translate-x-[150%] before:translate-y-[150%] 
-                                before:scale-[2.5] before:rounded-[100%] 
-                                before:bg-[#FB8500] before:transition-transform 
-                                before:duration-700 hover:before:translate-x-0 
-                                hover:before:translate-y-0 
-                                active:scale-90 active:transition-all active:duration-300 
-                                400px:px-4 400px:py-1">
+                  <button className="relative z-0 flex items-center justify-center px-4 py-1 text-white text-[16px] font-semibold public-sans bg-[#219EBC] overflow-hidden before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-[#FB8500] before:transition-transform before:duration-700 hover:before:translate-x-0 hover:before:translate-y-0 active:scale-90 active:transition-all active:duration-300 400px:px-4 400px:py-1"
+                  >
                     Call Us
                   </button>
                 </a>
@@ -187,7 +157,7 @@ export default function ContactUs() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "0px 0px -60px 0px" }}
-              className="bg-white rounded-[18px] overflow-hidden ml-8"
+              className="bg-white rounded-2xl overflow-hidden ml-8"
               style={{
                 border: "4px solid transparent",
                 backgroundImage: `linear-gradient(white, white), linear-gradient(180deg, #219ebc, #fb8500)`,
@@ -256,17 +226,7 @@ export default function ContactUs() {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.95 }}
-                    className="relative z-0 flex items-center justify-center 
-                                px-4 py-2 text-white text-[16px] font-semibold 
-                                public-sans bg-[#219EBC] overflow-hidden 
-                                before:absolute before:inset-0 before:-z-10 
-                                before:translate-x-[150%] before:translate-y-[150%] 
-                                before:scale-[2.5] before:rounded-[100%] 
-                                before:bg-[#FB8500] before:transition-transform 
-                                before:duration-700 hover:before:translate-x-0 
-                                hover:before:translate-y-0 
-                                active:scale-90 active:transition-all active:duration-300 
-                                400px:px-4 400px:py-2"
+                    className="relative z-0 flex items-center justify-center px-4 py-2 text-white text-[16px] font-semibold public-sans bg-[#219EBC] overflow-hidden before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-[#FB8500] before:transition-transform before:duration-700 hover:before:translate-x-0 hover:before:translate-y-0 active:scale-90 active:transition-all active:duration-300 400px:px-4 400px:py-2"
                   >
                     <LuSend size={18} />
                     Send Your Message

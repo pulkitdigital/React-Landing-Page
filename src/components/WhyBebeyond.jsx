@@ -7,7 +7,7 @@ import { FaTruckFast, FaStore, FaPalette } from "react-icons/fa6";
 const ORANGE = "#FB8500";
 const BLUE = "#219EBC";
 
-/* reusable card with motion */
+/* Card with full gradient background */
 function Card({
   icon,
   title,
@@ -25,73 +25,44 @@ function Card({
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay }}
       className={[
-        "relative overflow-hidden rounded-2xl border border-black/5 shadow-md hover:shadow-lg",
-        big ? "p-5 sm:p-6 md:p-7" : "p-4 sm:p-5",
-        "bg-gradient-to-br backdrop-blur transition-transform duration-300 hover:-translate-y-1",
+        "relative overflow-hidden rounded-2xl shadow-md hover:shadow-lg",
+        big ? "p-6 sm:p-7 md:p-8" : "p-5 sm:p-6",
+        "duration-300 hover:-translate-y-1 flex items-center min-h-[115px] sm:min-h-[110px]",
       ].join(" ")}
       style={{
-        background: `linear-gradient(135deg, ${gradFrom}15 0%, #ffffff 50%, ${gradTo}15 100%)`,
+        background: `linear-gradient(120deg, ${BLUE}22 0%, ${ORANGE}22 100%), #fff`,
+        // For bold effect: background: `linear-gradient(120deg, ${gradFrom}, ${gradTo})`
       }}
     >
-      <div className="rounded-xl bg-white/70 p-4 sm:p-5">
-        <div className="flex items-center gap-4 sm:gap-5">
-          <div className="shrink-0">{icon}</div>
-          <div>
-            <h3
-              className={
-                big
-                  ? "text-xl sm:text-2xl font-semibold text-[#219ebc]"
-                  : "text-xl sm:text-2xl font-semibold text-[#219ebc]"
-              }
-            >
-              {title}{" "}
-              {highlight && (
-                <span
-                  className="font-extrabold bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage: `linear-gradient(90deg, ${ORANGE}, ${BLUE})`,
-                  }}
-                >
-                  {highlight}
-                </span>
-              )}
-            </h3>
-            {subtitle && (
-              <p className="mt-1 text-sm text-[#0B1324]/70">{subtitle}</p>
+      <div className="flex items-center gap-4 sm:gap-5">
+        <div className="shrink-0">{icon}</div>
+        <div>
+          <h3 className="text-xl sm:text-2xl font-semibold text-[#219ebc]">
+            {title}{" "}
+            {highlight && (
+              <span
+                className="font-extrabold bg-clip-text text-transparent"
+                style={{
+                  backgroundImage: `linear-gradient(90deg, ${ORANGE}, ${BLUE})`,
+                }}
+              >
+                {highlight}
+              </span>
             )}
-          </div>
+          </h3>
+          {subtitle && (
+            <p className="mt-1 text-sm text-[#0B1324]/70">{subtitle}</p>
+          )}
         </div>
       </div>
-
-      {/* corner glows */}
-      <div
-        className="pointer-events-none absolute -top-10 -left-10 h-28 w-28 rounded-full blur-2xl opacity-40"
-        style={{ background: BLUE }}
-      />
-      <div
-        className="pointer-events-none absolute -bottom-10 -right-10 h-28 w-28 rounded-full blur-2xl opacity-40"
-        style={{ background: ORANGE }}
-      />
     </motion.div>
   );
 }
 
 export default function WhyBeBeyond() {
   return (
-    <div className="bg-[#f5f3ef]"> {/* New wrapper div with background */}
+    <div className="bg-[#f5f3ef]">
       <section className="relative mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8 py-16">
-        {/* Animated gradient background */}
-        <motion.div
-          animate={{
-            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-          }}
-          transition={{
-            duration: 12,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-        />
-
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -131,7 +102,6 @@ export default function WhyBeBeyond() {
               delay={0.1}
             />
           </div>
-
           <div className="lg:col-span-3">
             <Card
               big
@@ -143,7 +113,6 @@ export default function WhyBeBeyond() {
               delay={0.2}
             />
           </div>
-
           <div className="lg:col-span-2">
             <Card
               icon={<FaStore size={52} color={BLUE} />}
@@ -154,7 +123,6 @@ export default function WhyBeBeyond() {
               delay={0.3}
             />
           </div>
-
           <div className="lg:col-span-2">
             <Card
               icon={<SiSpeedtest size={52} color={BLUE} />}
@@ -165,7 +133,6 @@ export default function WhyBeBeyond() {
               delay={0.4}
             />
           </div>
-
           <div className="lg:col-span-2">
             <Card
               icon={<FaPalette size={52} color={ORANGE} />}
