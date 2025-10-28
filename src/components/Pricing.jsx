@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FaCheck, FaTimes } from "react-icons/fa";
 
 const ORANGE = "#FB8500";
@@ -24,11 +25,11 @@ const PLANS = [
     ],
   },
   {
-    name: "Pro",
+    name: "Pro (BeBeyond)",
     price: "₹74,999",
     cta: "Get in touch",
     highlight: true,
-    badge: "Most popular",
+    badge: "Most Popular",
     features: [
       { label: "Store Setup", ok: true },
       { label: "Premium Shop Experience", ok: true },
@@ -62,35 +63,74 @@ const PLANS = [
   },
 ];
 
+// motion variants
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.25, ease: "easeOut" },
+  },
+};
+
+const card = {
+  hidden: { opacity: 0, scale: 0.95, y: 30 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function Pricing() {
   return (
-    <section className="mx-auto w-full px-4 sm:px-6 lg:px-8 py-16 bg-[#F5F3EF]">
-      {/* Heading */}
-      <div className="text-center mb-10">
-        <h2 className="mb-0 text-center text-3xl sm:text-4xl font-semibold leading-tight">
+    <section className="mx-auto w-full px-4 sm:px-6 lg:px-8 py-16 bg-[#F5F3EF] overflow-hidden">
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="text-center mb-10"
+      >
+        <h2 className="text-3xl sm:text-4xl font-semibold leading-tight">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FB8500] to-[#219EBC]">
             Pricing
           </span>
         </h2>
-        <p className="mt-3 text-center text-[15px] text-[#111827]/70">
-          Invest in a store built right, designed to drive lasting results.
+        <p className="mt-3 text-[15px] text-[#111827]/70">
+          Invest in a store built right — designed to drive lasting results.
         </p>
-      </div>
+      </motion.div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
+      >
         {PLANS.map((plan, idx) => (
-          <div
+          <motion.div
             key={plan.name}
-            className={[
-              "relative rounded-2xl overflow-hidden",
-              "border border-black/10 shadow-sm",
-              plan.highlight ? "p-[1px]" : "",
-            ].join(" ")}
+            variants={card}
+            whileHover={{
+              y: -8,
+              boxShadow: plan.highlight
+                ? "0px 8px 30px rgba(251,133,0,0.3)"
+                : "0px 6px 20px rgba(0,0,0,0.1)",
+              transition: { duration: 0.3 },
+            }}
+            className={`relative rounded-2xl border border-black/10 shadow-sm overflow-hidden transform transition-all duration-300 ${
+              plan.highlight ? "p-[1px]" : ""
+            }`}
             style={
               plan.highlight
                 ? {
-                    background: `linear-gradient(135deg, ${ORANGE}, ${BLUE})`
+                    background: `linear-gradient(135deg, ${ORANGE}, ${BLUE})`,
+                    boxShadow:
+                      "0px 0px 18px rgba(251,133,0,0.4), 0px 0px 30px rgba(33,158,188,0.3)",
                   }
                 : undefined
             }
@@ -104,15 +144,13 @@ export default function Pricing() {
               </div>
             )}
 
-            {/* Card body */}
+            {/* Inner card */}
             <div
-              className={[
-                "h-full rounded-2xl",
+              className={`h-full rounded-2xl ${
                 plan.highlight
                   ? "bg-gradient-to-br from-white/90 to-white/70"
-                  : "bg-white",
-                "p-5 sm:p-6",
-              ].join(" ")}
+                  : "bg-white"
+              } p-5 sm:p-6 transition-all`}
             >
               <div className="text-sm text-[#0B1324]/70">{plan.name}</div>
 
@@ -121,30 +159,37 @@ export default function Pricing() {
               </div>
 
               <button
-                className={[
-                  "mt-4 w-full rounded-md px-4 py-2 text-sm font-semibold",
-                  plan.highlight ? "bg-white text-[#0B1324]" : "bg-black text-white",
-                ].join(" ")}
+                className={`mt-4 w-full rounded-md px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+                  plan.highlight
+                    ? "bg-white text-[#0B1324] hover:bg-[#f1f1f1]"
+                    : "bg-black text-white hover:bg-[#111827]"
+                }`}
               >
                 {plan.cta}
               </button>
 
               <ul className="mt-5 space-y-3">
                 {plan.features.map((f, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[14px] text-[#0B1324]">
+                  <li
+                    key={i}
+                    className="flex items-start gap-3 text-[14px] text-[#0B1324]"
+                  >
                     {f.ok ? (
-                      <FaCheck className="mt-[2px]" size={14} />
+                      <FaCheck className="mt-[2px] text-green-600" size={14} />
                     ) : (
-                      <FaTimes className="mt-[2px] opacity-60" size={14} />
+                      <FaTimes
+                        className="mt-[2px] opacity-60 text-gray-400"
+                        size={14}
+                      />
                     )}
                     <span className={f.ok ? "" : "opacity-70"}>{f.label}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

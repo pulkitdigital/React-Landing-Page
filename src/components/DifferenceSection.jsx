@@ -1,13 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  PiMaskSadFill,
-  PiCheckBold,
-} from "react-icons/pi";
+import { PiMaskSadFill, PiCheckBold } from "react-icons/pi";
 
 const PRIMARY = "#219EBC";
 const ACCENT = "#FB8500";
-const BG = "#f5f3ef";
 const gradientRing = `linear-gradient(90deg, ${PRIMARY}, ${ACCENT})`;
 
 function BulletNegative({ children }) {
@@ -29,7 +25,8 @@ function BulletPositive({ children }) {
         style={{
           width: 28,
           height: 28,
-          background: "radial-gradient(circle at 50% 50%, #0B0B0C 0%, #16181B 100%)",
+          background:
+            "radial-gradient(circle at 50% 50%, #0B0B0C 0%, #16181B 100%)",
           boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
           border: "2px solid transparent",
           backgroundImage: `linear-gradient(#0F1114, #0F1114), ${gradientRing}`,
@@ -69,9 +66,29 @@ export default function ComparisonSection() {
     "Modern, fully responsive mobile-first designs",
   ];
 
+  // Framer variants for smooth opposite-direction animations
+  const leftVariants = {
+    hidden: { opacity: 0, x: -80 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const rightVariants = {
+    hidden: { opacity: 0, x: 80 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <main className="w-full flex items-center justify-center px-2 sm:px-4">
+    <main className="w-full flex items-center justify-center px-2 sm:px-4 bg-[#F5F3EF]">
       <div className="max-w-5xl w-full flex flex-col items-center py-14 gap-6 relative z-10 mx-auto">
+        {/* Heading Section */}
         <div className="w-full flex flex-col items-center gap-1">
           <motion.div
             initial={{ opacity: 0, y: "50%" }}
@@ -86,26 +103,29 @@ export default function ComparisonSection() {
               </span>
             </h2>
           </motion.div>
+
           <motion.h3
             initial={{ y: "50%", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="mt-0 text-center text-[15px] text-[#111827]/70 font-normal"
-            style={{fontWeight:400,}}
+            style={{ fontWeight: 400 }}
           >
-            Discover how BeBeyond Digital outperforms other web agencies with tailored creativity, advanced functionality, and exceptional post-launch support.
+            Discover how BeBeyond Digital outperforms other web agencies with
+            tailored creativity, advanced functionality, and exceptional
+            post-launch support.
           </motion.h3>
         </div>
 
+        {/* Comparison Grid */}
         <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 w-full mt-6">
-          {/* VS pill (black) */}
+          {/* VS tag and connectors */}
           <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[74px] z-20">
             <div className="px-3 py-1 rounded-full bg-black text-white text-[12px] tracking-wide shadow">
               V/S
             </div>
           </div>
-          {/* connector dots */}
           <span
             className="hidden md:block absolute left-1/2 -translate-x-1/2 top-[112px] rounded-full"
             style={{
@@ -129,8 +149,14 @@ export default function ComparisonSection() {
             }}
           />
 
-          {/* LEFT: Other Agencies */}
-          <div className="bg-white rounded-2xl border border-[#D4D4D8] overflow-hidden shadow-sm w-full">
+          {/* LEFT COLUMN: Other Agencies */}
+          <motion.div
+            variants={leftVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+            className="bg-white rounded-2xl border border-[#D4D4D8] overflow-hidden shadow-sm w-full"
+          >
             <div className="px-4 sm:px-6 py-4 bg-[#EFEFEF] border-b border-[#D4D4D8] rounded-t-2xl">
               <h3 className="text-lg font-bold text-black text-center">
                 Other Agencies
@@ -141,14 +167,19 @@ export default function ComparisonSection() {
                 <BulletNegative key={i}>{t}</BulletNegative>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          {/* RIGHT: BeBeyond Digital (rounded gradient stroke) */}
-          <div
+          {/* RIGHT COLUMN: BeBeyond Digital */}
+          <motion.div
+            variants={rightVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
             className="bg-white rounded-2xl overflow-hidden shadow-md w-full"
             style={{
               border: "2px solid transparent",
-              backgroundImage: `linear-gradient(white, white), linear-gradient(180deg, #219ebc, #fb8500)`,
+              backgroundImage:
+                "linear-gradient(white, white), linear-gradient(180deg, #219ebc, #fb8500)",
               backgroundOrigin: "border-box",
               backgroundClip: "content-box, border-box",
             }}
@@ -163,18 +194,8 @@ export default function ComparisonSection() {
                 <BulletPositive key={i}>{t}</BulletPositive>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
-
-        {/* <motion.button
-          initial={{ y: "50%", opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-6 w-full max-w-xs px-6 py-3 text-white text-[16px] font-semibold bg-[#219EBC] overflow-hidden relative shadow-lg before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-[#FB8500] before:transition-transform before:duration-700 hover:before:translate-x-0 hover:before:translate-y-0 active:scale-95 active:transition-all active:duration-300"
-        >
-          Get in Touch
-        </motion.button> */}
       </div>
     </main>
   );
