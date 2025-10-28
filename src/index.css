@@ -1,0 +1,43 @@
+/* Add this CSS to your global stylesheet or inside a <style> tag */
+
+/* Import fonts (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Public+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Base font setup */
+:root {
+  --font-heading: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Public Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text, #E6ECFF);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utility classes */
+.bricolage {
+  font-family: var(--font-heading) !important;
+}
+
+.public-sans {
+  font-family: var(--font-body) !important;
+}
+
+/* Optional fine‑tuning for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* Paragraphs, spans, and small text */
+p, span, li, input, textarea, button {
+  font-family: var(--font-body);
+}
+
+/* Example usage:
+   <h1 class="bricolage text-4xl">Heading</h1>
+   <p class="public-sans text-base">Body content</p>
+*/
