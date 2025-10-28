@@ -37,14 +37,14 @@ export default function FAQSection() {
   const [openIdx, setOpenIdx] = useState(null);
 
   return (
-    <section className="flex flex-col items-center py-16 w-full bg-[#F5F3EF]">
-      <h2 className="mb-8 text-center text-3xl sm:text-4xl font-semibold leading-tight">
+    <section className="flex flex-col items-center py-10 sm:py-16 w-full bg-[#F5F3EF] px-2 sm:px-0">
+      <h2 className="mb-7 sm:mb-8 text-center text-2xl sm:text-4xl font-semibold leading-tight">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FB8500] to-[#219EBC]">
           Frequently Asked Questions
         </span>
       </h2>
 
-      <div className="w-full max-w-xl bg-white/80 rounded-2xl shadow mt-2 p-2">
+      <div className="w-full max-w-xl bg-white/80 rounded-2xl shadow mt-1 sm:mt-2 p-1.5 sm:p-2">
         {questions.map((item, idx) => {
           const open = openIdx === idx;
           return (
@@ -54,7 +54,7 @@ export default function FAQSection() {
               whileHover={{ y: -2, boxShadow: "0 4px 24px rgba(80,96,120,0.09)" }}
             >
               <button
-                className="flex items-center w-full px-3 py-4 text-left text-gray-700 focus:outline-none"
+                className="flex items-center w-full px-2 sm:px-3 py-3 sm:py-4 text-left text-gray-700 text-base sm:text-lg focus:outline-none"
                 onClick={() => setOpenIdx(open ? null : idx)}
               >
                 <PlusMinusIcon open={open} />
@@ -68,7 +68,7 @@ export default function FAQSection() {
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.35, type: "spring", bounce: 0 }}
-                    className="px-9 pb-4 text-[15px] text-gray-600 overflow-hidden rounded-2xl bg-white/90 shadow-sm"
+                    className="px-3 sm:px-6 pb-3 sm:pb-4 text-[15px] sm:text-base text-gray-600 overflow-hidden rounded-2xl bg-white/90 shadow-sm"
                   >
                     {item.a}
                   </motion.div>
