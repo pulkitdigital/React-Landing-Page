@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+/* src/components/trustedby.css */
+
+.why-choose-1-brand-swiper .swiper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-choose-1-brand-swiper .swiper-wrapper {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0;
+}
+
+.why-choose-1-brand-swiper .swiper-slide,
+.why-choose-1-brand-swiper .swiper-slide-prev,
+.why-choose-1-brand-swiper .swiper-slide-active,
+.why-choose-1-brand-swiper .swiper-slide-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  padding: 0;
+  gap: 0;
+}
