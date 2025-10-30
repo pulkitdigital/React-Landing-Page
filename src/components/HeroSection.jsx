@@ -41,17 +41,17 @@ export default function HeroSection() {
 
                     {/* Right Section - Visual */}
                     <div className="relative">
-                        <div className="mx-auto w-full max-w-[520px] rounded-xl border border-black/5 bg-white/90 p-3 shadow-xl backdrop-blur">
+                        <div className="mx-auto w-full max-w-[520px]">
                             <img
-                                src="/hero-page.webp"
+                                src="/hero-page.png"
                                 alt="Hero Mock"
                                 className="rounded-lg w-full h-auto object-cover"
                             />
                         </div>
 
                         {/* Floating color accents */}
-                        <div className="pointer-events-none absolute -top-6 -left-6 h-24 w-24 rounded-full blur-2xl opacity-50 bg-[#219EBC]" />
-                        <div className="pointer-events-none absolute -bottom-6 -right-6 h-24 w-24 rounded-full blur-2xl opacity-50 bg-[#FB8500]" />
+                        {/* <div className="pointer-events-none absolute -top-6 -left-6 h-24 w-24 rounded-full blur-2xl opacity-50 bg-[#219EBC]" />
+                        <div className="pointer-events-none absolute -bottom-6 -right-6 h-24 w-24 rounded-full blur-2xl opacity-50 bg-[#FB8500]" /> */}
                     </div>
                 </div>
             </div>
