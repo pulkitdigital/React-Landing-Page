@@ -1,5 +1,5 @@
 import React from "react";
-
+// import heroImg from "./hero-page.webp";
 export default function HeroSection() {
     return (
         <section className="relative overflow-hidden bg-white">
@@ -43,7 +43,7 @@ export default function HeroSection() {
                     <div className="relative">
                         <div className="mx-auto w-full max-w-[520px] rounded-xl border border-black/5 bg-white/90 p-3 shadow-xl backdrop-blur">
                             <img
-                                src="/hero-mock.png"
+                                src="/hero-page.webp"
                                 alt="Hero Mock"
                                 className="rounded-lg w-full h-auto object-cover"
                             />
