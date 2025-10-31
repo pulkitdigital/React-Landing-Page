@@ -31,7 +31,7 @@ function FeatureCard({ title, desc, img, delay = 0 }) {
             <img
               src={`${BASE}${img}`}
               alt={title}
-              className="absolute inset-0 h-full w-full object-cover rounded-2xl"
+              className="absolute inset-0 h-full w-full object-contain"
               loading="lazy"
             />
           </div>
@@ -47,25 +47,25 @@ export default function PremiumFeatures() {
       title: "Mobile-first Experience",
       desc:
         "Convert mobile shoppers with fast, responsive, mobile-optimized storefronts.",
-      img: "features/mobile-first.jpg",
+      img: "store_features/mobile.webp",
     },
     {
       title: "Product Swatches",
       desc:
         "Show variants like color, size, and style as swatches for clearer choices.",
-      img: "features/product-swatches.jpg",
+      img: "store_features/product.webp",
     },
     {
       title: "Advanced Product Filter",
       desc:
         "Help customers find products quickly with powerful, easy filters.",
-      img: "features/advanced-filter.jpg",
+      img: "store_features/filter.webp",
     },
     {
       title: "High-Converting Cart Pages",
       desc:
         "Boost AOV with countdowns, trust badges, shipping calculators & more.",
-      img: "features/high-converting-cart.jpg",
+      img: "store_features/cartpage.webp",
     },
   ];
 

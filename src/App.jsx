@@ -28,7 +28,7 @@ function App() {
       <Reviews/>
       <FAQ/>
       <Contact/>
-      
+
       <Footer/>
     </>
   ) 

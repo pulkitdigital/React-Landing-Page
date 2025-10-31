@@ -6,12 +6,12 @@ const BLUE = "#219EBC";
 
 export default function OurWork() {
   const WORKS = [
-    { src: "/our_works/social-media-marketing.jpg", alt: "Social Media Marketing" },
-    { src: "/our_works/video-production.jpg", alt: "Video Production" },
-    { src: "/our_works/website-design.jpg", alt: "Website Design" },
-    { src: "/our_works/art-&-design.jpg", alt: "Social Media Marketing" },
-    { src: "/our_works/branding.jpg", alt: "Video Production" },
-    { src: "/our_works/content-&-marketing.jpg", alt: "Website Design" },
+    { src: "/our_works/scannerAdda.webp", alt: "Scanner Adda", link: "https://scanneradda.com/" },
+    { src: "/our_works/aromaBlush.webp", alt: "Aroma Blush", link: "https://aromablush.com" },
+    { src: "/our_works/thkuraiensa.webp", alt: "Thkuraien Sa", link: "https://thkuraiensa.com" },
+    { src: "/our_works/videolinks.webp", alt: "Video Links", link: "https://videolinks.in" },
+    // { src: "/our_works/branding.jpg", alt: "Video Production" },
+    // { src: "/our_works/content-&-marketing.jpg", alt: "Website Design" },
   ];
 
   const container = {
@@ -33,7 +33,7 @@ export default function OurWork() {
       <div className="text-center mb-8">
         <h2 className="mb-0 text-center text-3xl sm:text-4xl font-semibold leading-tight">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FB8500] to-[#219EBC]">
-             See Our Work
+            See Our Work
           </span>
         </h2>
         <p className="mt-3 text-center text-[15px] text-[#111827]/70">
@@ -47,18 +47,28 @@ export default function OurWork() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6"
       >
         {WORKS.map((work, i) => (
-          <motion.div
+          <motion.a
             key={i}
+            href={work.link}
+            target="_blank"
+            rel="noopener noreferrer"
             variants={item}
             className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500"
+            style={{
+              border: "2px solid transparent",
+              backgroundImage:
+                "linear-gradient(white, white), linear-gradient(180deg, #219ebc, #fb8500)",
+              backgroundOrigin: "border-box",
+              backgroundClip: "content-box, border-box",
+            }}
           >
             <img
               src={work.src}
               alt={work.alt}
-              className="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
 
@@ -68,7 +78,7 @@ export default function OurWork() {
                 {work.alt}
               </p>
             </div>
-          </motion.div>
+          </motion.a>
         ))}
       </motion.div>
     </section>
