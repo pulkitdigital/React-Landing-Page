@@ -68,7 +68,7 @@ export default function OurWork() {
             <img
               src={work.src}
               alt={work.alt}
-              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-auto object-cover transition-transform duration-700"
               loading="lazy"
             />
 

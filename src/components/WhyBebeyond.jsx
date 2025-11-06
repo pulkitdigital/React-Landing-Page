@@ -146,7 +146,7 @@ export default function WhyBeBeyond() {
         </div>
 
         {/* Bottom text */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -164,7 +164,7 @@ export default function WhyBeBeyond() {
           >
             Only
           </div>
-        </motion.div>
+        </motion.div> */}
       </section>
     </div>
   );

@@ -8,7 +8,7 @@ const BLUE = "#219EBC";
 const PLANS = [
   {
     name: "Basic",
-    price: "₹49,999",
+    price: "₹29,999",
     cta: "Get in touch",
     highlight: false,
     features: [
@@ -26,7 +26,7 @@ const PLANS = [
   },
   {
     name: "Pro (BeBeyond)",
-    price: "₹74,999",
+    price: "₹49,999",
     cta: "Get in touch",
     highlight: true,
     badge: "Most Popular",
@@ -45,7 +45,7 @@ const PLANS = [
   },
   {
     name: "Business",
-    price: "₹99,999",
+    price: "₹74,999",
     cta: "Get in touch",
     highlight: false,
     features: [
@@ -83,6 +83,14 @@ const card = {
 };
 
 export default function Pricing() {
+  // 👇 scroll handler
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact-form");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="mx-auto w-full px-4 sm:px-6 lg:px-8 py-16 bg-[#F5F3EF] overflow-hidden">
       {/* Header */}
@@ -111,7 +119,7 @@ export default function Pricing() {
         viewport={{ once: true, amount: 0.3 }}
         className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
       >
-        {PLANS.map((plan, idx) => (
+        {PLANS.map((plan) => (
           <motion.div
             key={plan.name}
             variants={card}
@@ -158,7 +166,9 @@ export default function Pricing() {
                 {plan.price}
               </div>
 
+              {/* 👇 Button triggers scroll */}
               <button
+                onClick={scrollToContact}
                 className={`mt-4 w-full rounded-md px-4 py-2 text-sm font-semibold transition-all duration-300 ${
                   plan.highlight
                     ? "bg-white text-[#0B1324] hover:bg-[#f1f1f1]"

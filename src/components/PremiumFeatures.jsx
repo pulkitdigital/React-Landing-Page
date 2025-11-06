@@ -59,13 +59,14 @@ export default function PremiumFeatures() {
       title: "Advanced Product Filter",
       desc:
         "Help customers find products quickly with powerful, easy filters.",
-      img: "store_features/filter.webp",
+      img: "store_features/cartpage.webp",
     },
     {
       title: "High-Converting Cart Pages",
       desc:
         "Boost AOV with countdowns, trust badges, shipping calculators & more.",
-      img: "store_features/cartpage.webp",
+      img: "store_features/filter.webp",
+      
     },
   ];
 
