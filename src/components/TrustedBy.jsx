@@ -252,12 +252,11 @@ export default function TrustedBy() {
         </span>
       </h2>
 
-      {/* Evenly spaced logos */}
+      {/* Logos (auto width + scaled to 50%) */}
       <div
         className="
-          flex flex-wrap justify-evenly gap-y-10
-          items-center
-          w-full
+          flex flex-wrap justify-center sm:justify-evenly gap-x-8 gap-y-10
+          items-center w-full
         "
       >
         {LOGOS.map((logo) => (
@@ -268,19 +267,26 @@ export default function TrustedBy() {
             rel="noopener noreferrer"
             title={logo.name}
             aria-label={`${logo.name} website`}
-            className="flex items-center justify-center w-32 sm:w-36 md:w-40 lg:w-44"
+            className="flex items-center justify-center px-3 sm:px-4"
           >
             <img
               src={`${BASE}${encodeURIComponent(logo.file)}`}
               alt={logo.name}
               loading="lazy"
-              className="max-h-20 w-auto object-contain transition-transform duration-200 hover:scale-95"
+              className="object-contain transition-transform duration-300 hover:scale-95"
+              style={{
+                height: "auto",
+                width: "auto",
+                transform: "scale(1.3)", // 👈 scales image to 50%
+                transformOrigin: "center",
+                maxHeight: "60px", // keeps layout uniform
+              }}
             />
           </a>
         ))}
       </div>
 
-      {/* Optional subtle separators */}
+      {/* Subtle separators */}
       <div className="pointer-events-none absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
       <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
     </section>

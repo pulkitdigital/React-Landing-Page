@@ -86,7 +86,7 @@ export default function ComparisonSection() {
   };
 
   return (
-    <main className="w-full flex items-center justify-center px-2 sm:px-4 bg-[#F5F3EF]">
+    <main className="w-full flex items-center justify-center px-2 sm:px-4">
       <div className="max-w-5xl w-full flex flex-col items-center py-14 gap-6 relative z-10 mx-auto">
         {/* Heading Section */}
         <div className="w-full flex flex-col items-center gap-1">
