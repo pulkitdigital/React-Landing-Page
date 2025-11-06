@@ -93,7 +93,7 @@ const Footer = () => (
       </div>
       {/* COPYRIGHT */}
       <div className="relative z-[2] text-[#c0c5ce] text-center text-[13px] sm:text-[14px] mt-8 sm:mt-12 md:mt-14">
-        © 2024 Be Beyond, All Rights Reserved. Design By Be Beyond
+        © 2025 BeBeyond, All Rights Reserved. Design By BeBeyond
       </div>
     </div>
   </footer>
