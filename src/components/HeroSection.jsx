@@ -101,7 +101,7 @@ export default function HeroSection() {
                                 className="absolute -bottom-10 left-3"
                                 style={{
                                     animation:
-                                        "fadeUp 700ms cubic-bezier(.22,.9,.35,1) forwards 600ms, spinSlow 8s linear 1200ms infinite",
+                                        "fadeUp 700ms cubic-bezier(.22,.9,.35,1) forwards 540ms, floatY 3.2s ease-in-out 1000ms infinite",
                                     willChange: "transform, opacity",
                                 }}
                             >
