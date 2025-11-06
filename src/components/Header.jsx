@@ -8,7 +8,12 @@ export default function StickyHeader() {
       <div className="mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
+          <a
+            href="https://bebeyond.digital"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2"
+          >
             <img
               src={logo}
               alt="Be Beyond Digital Solutions"

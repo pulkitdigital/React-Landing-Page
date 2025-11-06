@@ -10,6 +10,7 @@ import PremiumFeatures from './components/PremiumFeatures.jsx'
 import DifferenceSection from './components/DifferenceSection.jsx'
 import Pricing from './components/Pricing.jsx'
 import Reviews from './components/Reviews.jsx'
+import CTASection from "./components/CTASection";
 import Contact from './components/Contact.jsx'
 import FAQ from './components/FAQ.jsx'
 import Footer from './components/Footer.jsx'
@@ -27,6 +28,7 @@ function App() {
       <Pricing/>
       <Reviews/>
       <FAQ/>
+      <CTASection/>
       <Contact/>
 
       <Footer/>
