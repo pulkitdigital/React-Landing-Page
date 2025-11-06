@@ -43,20 +43,34 @@ const Footer = () => (
           </div>
         </div>
         {/* COMPANY */}
-        <div className="flex-1 min-w-[200px] flex flex-col gap-4 items-center md:items-start text-center md:text-left">
+        <div className="flex-1 min-w-[200px] flex flex-col gap-4 items-center md:items-center text-center md:text-left">
           <h4 className="text-white text-lg font-semibold mb-1 text-[21px] sm:text-[25px]">Company</h4>
-          <ul className="flex flex-col gap-2 text-[#c0c5ce] text-[15px]">
+          <ul className="flex flex-col gap-2 text-[#c0c5ce] text-[15px]text-left">
             <li>
-              <a href="/services" className="hover:underline">Services</a>
+              <a href="https://bebeyond.digital/" className="hover:underline"
+              target="_blank"
+              >Home</a>
             </li>
             <li>
-              <a href="/blog" className="hover:underline">Blog</a>
+              <a href="https://bebeyond.digital/services" 
+              target="_blank"
+              className="hover:underline">Services</a>
             </li>
             <li>
-              <a href="/about" className="hover:underline">About</a>
+              <a href="https://bebeyond.digital/blog" 
+              target="_blank"
+              className="hover:underline">Blog</a>
+
             </li>
             <li>
-              <a href="/contact" className="hover:underline">Contact</a>
+              <a href="https://bebeyond.digital/about"
+              target="_blank"
+              className="hover:underline">About</a>
+            </li>
+            <li>
+              <a href="https://bebeyond.digital/contact" 
+              target="_blank"
+              className="hover:underline">Contact</a>
             </li>
           </ul>
         </div>
